@@ -59,7 +59,15 @@ var posts = [{
 router.get('/post', function (req, res) {
     res.send(posts);
 });
-
+router.get('/post/:id', function (req, res) {
+    var id = req.params.id
+    //console.log('id ', id)
+    var post = posts.find(function (post) {
+        return post.id == id;
+    })
+    //console.log('found post: ', post)
+    res.send(post);
+});
 router.post('/post', function (req, res) {
     var recipe = req.body;
     recipe.id = uuid.v1();
