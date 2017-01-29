@@ -4,8 +4,10 @@ var serveStatic = require('serve-static')
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var uuid = require('node-uuid');
+var cors = require('cors');
 
 var app = express()
+app.use(cors());
 app.use(morgan('combined'))
 
 // deprecated
@@ -29,13 +31,13 @@ var posts = [{
     body: "Crack the eggs into a mixing bowl, season with a pinch of sea salt and black pepper, then beat well with a fork until fully combined. Place a small non-stick frying pan on a low heat to warm up. Grate the cheese onto a board and set aside. Add ½ tablespoon of oil to the hot pan, then carefully pour in the eggs.",
     new: true
 }, {
-    id: "f588d038-0cfd-4e4b-add7-959c332081bc",
+    id: "f588d038-0cfd-4e4b-add7-959c332092cd",
     userid: "jaaf0d90-306e-11e5-80b5-5b0f99bb025c",
     title: "Mushroom Omelette",
     body: "Omelettes are a breakfast classic. They are quick and easy to make. Mushrooms are a great omelette filling, and can be easily upgraded with other things, such as cheese or onion. If you don't like eggs for breakfast, you can always have your omelette for lunch or dinner.",
     new: true
 }, {
-    id: "f588d038-0cfd-4e4b-add7-959c332081bc",
+    id: "f588d038-0cfd-4e4b-add7-959c332090e3",
     userid: "6eaf0d90-306e-11e5-80b5-5b0f99bb025c",
     title: "Baked Beans on Toast",
     body: "Preheat oven to 350 degrees F. In a Dutch oven, mix onion, pork and beans, mustard, maple syrup, light brown sugar, ketchup, and lemon juice. Top with the bacon pieces. Bake, covered, for 45 to 60 minutes.",
